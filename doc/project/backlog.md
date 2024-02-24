@@ -1,0 +1,21 @@
+# Backlog
+
+- [x] Folder Structure
+- [ ] Project Charter
+- [ ] Project Management Plan
+- [ ] Client Window
+- [ ] Editor Window
+- [ ] Engine
+  - [ ] Application
+    - [ ] App Core
+    - [ ] Config 
+    - [ ] 
+    - [ ] 
+    - [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ]  
