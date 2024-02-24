@@ -1,6 +1,6 @@
 # Econ RPG
 
-
+Create your character, and explore a highly customizable simulated world and economy! Who will you become?
 
 ## Navigation
 
