@@ -92,6 +92,10 @@ void window_breakdown(Window* w) {
     w->flags = 0;
 }
 
+void window_set_title(const char * title) {
+    SDL_SetWindowTitle(window.sdl_window, title);
+}
+
 int window_get_graphics_api_flag(char * graphics_api) {
     if (strncmp(graphics_api, "opengl", 20) == 0) {
         return SDL_WINDOW_OPENGL;

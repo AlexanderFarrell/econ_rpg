@@ -23,6 +23,8 @@ extern Window window;
 // Creates a new window. If this fails to create an initial window, it will close the app.
 void window_start(int width, int height, char * graphics_api, char * title);
 
+void window_set_title(const char * title);
+
 // Attempts to swap the current window with another of a different graphics_api.
 // If this fails, it will keep the current window.
 void window_swap_graphics_api(char * graphics_api);
