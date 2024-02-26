@@ -5,7 +5,7 @@
 #ifndef ECON_RPG_VISUAL_H
 #define ECON_RPG_VISUAL_H
 
-#include "apis/graphics_api.h"
+#include "graphics_api.h"
 
 typedef struct Visual Visual;
 struct Visual {

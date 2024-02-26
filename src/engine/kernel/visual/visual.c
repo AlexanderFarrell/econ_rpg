@@ -4,7 +4,7 @@
 
 #include "visual.h"
 #include <string.h>
-#include "apis/opengl.h"
+#include "gl/opengl.h"
 #include "../console/console.h"
 #include "../../core/app.h"
 

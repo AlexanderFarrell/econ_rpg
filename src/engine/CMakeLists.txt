@@ -5,6 +5,7 @@ project(game_engine)
 find_package(SDL2 REQUIRED)
 find_package(Vulkan REQUIRED)
 add_subdirectory(external/glad)
+add_subdirectory(external/cglm)
 
 add_library(${PROJECT_NAME} engine.h engine.c
         core/app.c
@@ -24,14 +25,28 @@ add_library(${PROJECT_NAME} engine.h engine.c
         kernel/window/window.c
         kernel/window/window.h
         util/error.h
-        kernel/visual/apis/opengl.c
-        kernel/visual/apis/opengl.h
-        kernel/visual/apis/graphics_api.h
+        kernel/visual/gl/opengl.c
+        kernel/visual/gl/opengl.h
+        kernel/visual/graphics_api.h
         external/gl.h
-        kernel/visual/apis/vulkan.c
-        kernel/visual/apis/vulkan.h
+        kernel/visual/vulkan/vulkan.c
+        kernel/visual/vulkan/vulkan.h
         external/vulkan.h
+        kernel/visual/camera.c
+        kernel/visual/camera.h
+        util/location.c
+        util/location.h
+        util/swizzle.h
+        kernel/visual/shader.c
+        kernel/visual/shader.h
+        kernel/visual/gl/gl_shader.c
+        kernel/visual/gl/gl_shader.h
+        kernel/visual/uniform.c
+        kernel/visual/uniform.h
+        kernel/visual/gl/gl_uniform.c
+        kernel/visual/gl/gl_uniform.h
 )
 
-target_include_directories(${PROJECT_NAME} PUBLIC ${SDL2_INCLUDE_DIRS} external/glad ${VULKAN_INCLUDE_DIRS})
-target_link_libraries(${PROJECT_NAME} PUBLIC ${SDL2_LIBRARIES} glad vulkan)
+target_include_directories(${PROJECT_NAME} PUBLIC ${SDL2_INCLUDE_DIRS}
+        external/glad ${VULKAN_INCLUDE_DIRS} external/cglm)
+target_link_libraries(${PROJECT_NAME} PUBLIC ${SDL2_LIBRARIES} glad vulkan cglm)

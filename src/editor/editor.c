@@ -3,6 +3,7 @@
 //
 #include <base.h>
 #include <engine.h>
+#include <kernel/kernel.h>
 #include <kernel/window/window.h>
 
 void editor_on_start();
@@ -20,7 +21,8 @@ int main() {
 }
 
 void editor_on_start() {
-    window_set_title("ERPG Editor");
+    window_set_title("Economics RPG Editor");
+//    kernel_set_poll_func(SDL_WaitEvent);
 }
 
 void editor_on_end() {

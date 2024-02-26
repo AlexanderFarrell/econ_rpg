@@ -14,6 +14,7 @@ typedef struct Kernel Kernel;
 struct Kernel {
     unsigned long step;
     int (*poll_event_func)(SDL_Event * event);
+
 };
 
 Kernel kernel = {0};
@@ -38,11 +39,16 @@ void kernel_start() {
 
 void kernel_update() {
     SDL_Event event;
+    visual_update();
     while (kernel.poll_event_func(&event)) {
+        if (event.type == SDL_QUIT) {
+            app_stop();
+            break;
+        }
         switch (event.type) {
-            case SDL_QUIT:
-                app_stop();
-                break;
+//            case SDL_QUIT:
+//                app_stop();
+//                break;
             case SDL_KEYDOWN:
                 break;
             case SDL_KEYUP:
@@ -60,8 +66,8 @@ void kernel_update() {
         }
     }
 
-    visual_update();
     visual_update_late();
+    SDL_Delay(10);
     kernel.step++;
 }
 
