@@ -6,6 +6,7 @@
 #define ECONOMICS_SIMULATOR_GRAPHICS_API_H
 
 #include "uniform.h"
+#include "texture.h"
 
 typedef struct GraphicsApi GraphicsApi;
 struct GraphicsApi {
@@ -19,6 +20,10 @@ struct GraphicsApi {
     void (*shader_delete)(void * shader);
     void (*uniform_prepare)(Uniform* uniform, void * shader);
     void (*uniform_bind)(Uniform * uniform);
+    void (*texture_buffer)(Texture* texture);
+    void (*texture_activate)(Texture* texture, int n);
+    void (*texture_destroy)(Texture* texture);
+    size_t texture_size;
 };
 
 #endif //ECONOMICS_SIMULATOR_GRAPHICS_API_H

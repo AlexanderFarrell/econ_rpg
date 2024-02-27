@@ -1,15 +1,17 @@
 //
 // Created by alexander on 2/24/24.
 //
-#include <base.h>
+
 #include <engine.h>
 #include "menu/menu.h"
+#include "play/play.h"
 
 int main() {
     Stage stages[] = {
-        menu_stage
+        menu_stage,
+        play_stage
     };
 
-    app_setup(stages, 1);
+    app_setup(stages, 2);
     app_run("Menu");
 }

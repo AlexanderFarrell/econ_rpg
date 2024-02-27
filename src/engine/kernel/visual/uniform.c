@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
+#include "visual.h"
 
 void uniform_init(Uniform* uniform, char * name, UniformKind kind) {
     int size;
@@ -43,9 +44,9 @@ void uniform_deinit(Uniform* uniform) {
 }
 
 void uniform_prepare(Uniform* uniform, void * shader) {
-
+    visual.graphics_api.uniform_prepare(uniform, shader);
 }
 
 void uniform_bind(Uniform* uniform) {
-
+    visual.graphics_api.uniform_bind(uniform);
 }

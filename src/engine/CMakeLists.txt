@@ -6,6 +6,7 @@ find_package(SDL2 REQUIRED)
 find_package(Vulkan REQUIRED)
 add_subdirectory(external/glad)
 add_subdirectory(external/cglm)
+add_subdirectory(external/spng)
 
 add_library(${PROJECT_NAME} engine.h engine.c
         core/app.c
@@ -45,8 +46,12 @@ add_library(${PROJECT_NAME} engine.h engine.c
         kernel/visual/uniform.h
         kernel/visual/gl/gl_uniform.c
         kernel/visual/gl/gl_uniform.h
+        kernel/visual/texture.c
+        kernel/visual/texture.h
+        kernel/visual/gl/gl_texture.c
+        kernel/visual/gl/gl_texture.h
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${SDL2_INCLUDE_DIRS}
-        external/glad ${VULKAN_INCLUDE_DIRS} external/cglm)
-target_link_libraries(${PROJECT_NAME} PUBLIC ${SDL2_LIBRARIES} glad vulkan cglm)
+        external/glad ${VULKAN_INCLUDE_DIRS} external/cglm external/spng)
+target_link_libraries(${PROJECT_NAME} PUBLIC ${SDL2_LIBRARIES} glad vulkan cglm spng)

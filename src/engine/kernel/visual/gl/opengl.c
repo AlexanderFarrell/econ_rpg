@@ -10,6 +10,7 @@
 #include "../../../external/gl.h"
 #include "gl_uniform.h"
 #include "gl_shader.h"
+#include "gl_texture.h"
 
 
 #define GL_MAJOR_VERSION_DEFAULT 3
@@ -33,6 +34,10 @@ GraphicsApi get_opengl() {
     graphics_api.shader_delete = gl_shader_delete;
     graphics_api.uniform_prepare = gl_uniform_prepare;
     graphics_api.uniform_bind = gl_uniform_bind;
+    graphics_api.texture_size = sizeof(GLTexture);
+    graphics_api.texture_activate = gl_texture_activate;
+    graphics_api.texture_destroy = gl_texture_destroy;
+    graphics_api.texture_buffer = gl_texture_buffer;
 
     return graphics_api;
 }
