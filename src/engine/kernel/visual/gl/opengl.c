@@ -11,7 +11,7 @@
 #include "gl_uniform.h"
 #include "gl_shader.h"
 #include "gl_texture.h"
-
+#include "gl_mesh.h"
 
 #define GL_MAJOR_VERSION_DEFAULT 3
 #define GL_MINOR_VERSION_DEFAULT 3
@@ -38,6 +38,9 @@ GraphicsApi get_opengl() {
     graphics_api.texture_activate = gl_texture_activate;
     graphics_api.texture_destroy = gl_texture_destroy;
     graphics_api.texture_buffer = gl_texture_buffer;
+    graphics_api.mesh_size = gl_mesh_size();
+    graphics_api.mesh_init = gl_mesh_init;
+    graphics_api.mesh_deinit = gl_mesh_deinit;
 
     return graphics_api;
 }

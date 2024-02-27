@@ -7,6 +7,7 @@
 
 #include "uniform.h"
 #include "texture.h"
+#include "mesh.h"
 
 typedef struct GraphicsApi GraphicsApi;
 struct GraphicsApi {
@@ -23,7 +24,11 @@ struct GraphicsApi {
     void (*texture_buffer)(Texture* texture);
     void (*texture_activate)(Texture* texture, int n);
     void (*texture_destroy)(Texture* texture);
+    void (*mesh_init)(Mesh* mesh);
+    void (*mesh_deinit)(Mesh* mesh);
+    void (*mesh_draw)(Mesh* mesh);
     size_t texture_size;
+    size_t mesh_size;
 };
 
 #endif //ECONOMICS_SIMULATOR_GRAPHICS_API_H
